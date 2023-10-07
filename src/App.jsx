@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LoginScreen from "./pages/login/login"
 
-function App() {
+function App() {  
   return (
     <>
       <BrowserRouter>
