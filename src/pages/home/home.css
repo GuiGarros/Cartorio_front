@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh; /* Define a altura da página inteira */
+  }
+  .background-home{
+    background-color: #404040;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: column;
+}
+
+.titulo-on-top-home{
+    padding: 2em;
+}
+.titulo-home{
+  /* display: inline-block;  */
+  display: block;
+  margin-top: 20px;
+  font-size: 100px;
+  color: #A9A9A9;
+}
+.subtitulo{
+  color:#A9A9A9;
+}
+
+.container{
+    background: lightgrey;
+    width: 50%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    border-radius: 10px;
+    border-color: black;
+    border: 5px;
+}
+
+.teste{
+    width: 100%;
+    text-align: center;
+}
+.titulo-home{
+    color: white;
+    font-size: 80px;
+  }
+
+  .buttongrouphome {
+    width: 100%;
+    top: 0;
+  }
+ 
+  .vendabutton {
+    color: black;
+    background: rgb(73,207,183);
+    background: linear-gradient(180deg, rgba(73,207,183,1) 0%, rgba(94,70,189,1) 100%);
+    justify-self: center;
+    align-self: center;
+  }
+
+  .divbutton {
+    width: 100;
+    margin-top: 20px;
+    align-items: center;
+    align-self: center;
+  }
+
+  .backdiv{
+      height: 40px;
+      width: 100%;
+      background-color: #404040;
+  }
+
+.logout {
+  color: white;
+}
+
+.logoutbutton {
+  position: absolute;
+  right: 10px;
+  margin-top: 20px;
+  background-color: transparent;
+}

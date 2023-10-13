@@ -1,0 +1,32 @@
+.buttongroup {
+    width: 25%;
+    border-radius: 0;
+}
+
+.buttongroupleft {
+    width: 25%;
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+}
+
+
+.buttongroupright {
+    width: 25%;
+    border-radius: 0px;
+    border-top-right-radius: 10px;
+}
+
+.buttongroupdiv {
+    width: 100%;
+}
+
+.border-button {
+    border-width: 0px;
+    border-bottom-width: 3px;
+    border-image:linear-gradient(180deg, rgba(73,207,183,1) 0%, rgba(94,70,189,1) 100%);
+    border-image-slice:1;
+}
+
+.icon {
+    float: left;
+}
