@@ -30,7 +30,7 @@ body {
 }
 
 .container{
-    background: lightgrey;
+    background: #808080;
     width: 50%;
     height: 65%;
     display: flex;
@@ -86,4 +86,8 @@ body {
   right: 10px;
   margin-top: 20px;
   background-color: transparent;
+}
+
+.accordion {
+  border-color: black;
 }

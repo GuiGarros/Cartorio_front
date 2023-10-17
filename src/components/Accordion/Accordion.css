@@ -1,0 +1,44 @@
+.icon-home-accordion {
+    float: left;
+    margin-right: 10px;
+}
+
+.accordion {
+    margin-bottom: 10px;
+}
+
+.statusAguardando {
+    transform: scaleX(-1);
+    float: right;
+    margin-right: 10px;
+    color: yellow;
+}
+.div-status {
+    display: flex;
+    flex-direction: row;
+}
+
+.div-status-2 {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    top:0;
+    justify-content: top;
+    align-items: center;
+    height: 10%;
+    width: 20%;
+}
+
+.statusConcluido {
+    transform: scaleX(-1);
+    float: right;
+    margin-right: 10px;
+    color: yellowgreen;
+}
+
+.statusCancelado {
+    transform: scaleX(-1);
+    float: right;
+    margin-right: 10px;
+    color: red;
+}
