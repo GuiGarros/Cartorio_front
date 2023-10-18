@@ -24,7 +24,7 @@ function Login() {
       console.log(accounts[0]);
       //const signer = new ethers.Wallet('0x338ac048143fc98223dff0546400c62f5c29499527517f2ab4d07bf55b936330',ethereumProvider);
       console.log(await signer.getAddress());
-      const CartorioWithSigner = Cartorio.connect(signer);
+      const CartorioWithSigner = await Cartorio.connect(signer);
       //const transaction = await CartorioWithSigner.registraPropriedade()
 
       const result = await CartorioWithSigner.getSenha();

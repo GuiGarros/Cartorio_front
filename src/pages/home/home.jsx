@@ -28,7 +28,7 @@ function HomePage() {
 
   function handleClickCompra(contrato) {
     console.log(contrato);
-    if(parseInt(contrato.status) === 2){
+    if(parseInt(contrato.status) === 1){
       navigate("/novacompra",{state:{contrato}});
     }
 
