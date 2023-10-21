@@ -6,6 +6,7 @@ import CadScreen from "./pages/cadastrar/cadastrar"
 import HomeScreen from "./pages/home/home"
 import SellScreen from "./pages/sell/sell"
 import BuyScreen from "./pages/Compra/compra"
+import CancellScreen from "./pages/cancela/cancela"
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path='/home' Component={HomeScreen}></Route>
           <Route path='/novavenda' Component={SellScreen}></Route>
           <Route path='/novacompra' Component={BuyScreen}></Route>
+          <Route path='/cancelavenda' Component={CancellScreen}></Route>
         </Routes>
 
     </>

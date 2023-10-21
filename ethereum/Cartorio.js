@@ -6,6 +6,6 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
 await provider.send("eth_requestAccounts", []);
 const signer = ethereumProvider.getSigner(accounts[0]);
 
-const instance = new ethers.Contract("0xEfFFb89E98698ebE2519807D1AdB2eF2A4Ee4a41",Cartorio.abi, signer);
+const instance = new ethers.Contract("0x9eE1afb409266Db2fCC66a7b322db0317423A927",Cartorio.abi, signer);
 
 export default instance

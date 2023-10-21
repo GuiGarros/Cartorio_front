@@ -51,7 +51,6 @@ export const insertUsuarioBanco =
       try {
         const instance = getApiInstance();
         const {data} = await instance.post(`/usuarios`,json);
-        console.log(data);
       } catch (error) {
         throw Error(error);
       }
@@ -76,7 +75,6 @@ export const insertContratoBanco =
     try {
       const instance = getApiInstance();
       const {data} = await instance.post(`/contratos`,json);
-      console.log(data);
     } catch (error) {
       throw Error(error);
     }
@@ -102,11 +100,21 @@ export const insertCompra =
       try{
         const instance = getApiInstance();
         const {data} = await instance.post(`/compras`,json);
-        console.log(data);
       } catch(error) {
         throw Error(error);
       }
     }
+
+export const atualizaStatusCompra = 
+    (json) =>
+      async(dispatch) => {
+        try {
+          const instance = getApiInstance();
+          const {data} = await instance.put(`/compras`,json);
+        } catch (error) {
+          throw Error(error);
+        }
+      }
 
 //imovel 
 
@@ -117,7 +125,6 @@ export const getImoveis =
         const instance = getApiInstance();
         const {data} = await instance.get(`/imoveis/${id}`);
         dispatch(getImoveisBanco(data));
-        console.log(data);
       } catch (error) {
         throw Error(error);
       }
@@ -129,7 +136,6 @@ export const insertImovel =
       try {
         const instance = getApiInstance();
         const {data} = await instance.post(`/imoveis`,json);
-        console.log(data);
       } catch (error) {
           throw Error(error);
       }
@@ -166,8 +172,18 @@ export const insertVenda =
       try{
         const instance = getApiInstance();
         const {data} = await instance.post(`/vendas`,json);
-        console.log(data);
       } catch(error) {
+        throw Error(error);
+      }
+    }
+
+export const atualizaStatusVenda = 
+  (json) =>
+    async(dispatch) => {
+      try {
+        const instance = getApiInstance();
+        const {data} = await instance.put(`/vendas`,json);
+      } catch (error) {
         throw Error(error);
       }
     }

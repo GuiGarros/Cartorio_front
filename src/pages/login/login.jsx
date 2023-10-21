@@ -1,4 +1,7 @@
 import { TextField } from '@mui/material';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import Stack from '@mui/material/Stack';
 import { ethers } from 'ethers';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -10,28 +13,27 @@ function Login() {
   const [count, setCount] = useState(0);
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
+  const [alert, setAlert] = useState(false);
   const navigate = useNavigate();
-
 
   async function login(usuario) {
     try {
+      setAlert(false);
       const instance = getApiInstance();
       const { data } = await instance.get(`/usuarios/${usuario}`);
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       await provider.send('eth_requestAccounts', []);
       const signer = provider.getSigner();
-      console.log(accounts[0]);
       //const signer = new ethers.Wallet('0x338ac048143fc98223dff0546400c62f5c29499527517f2ab4d07bf55b936330',ethereumProvider);
-      console.log(await signer.getAddress());
       const CartorioWithSigner = await Cartorio.connect(signer);
       //const transaction = await CartorioWithSigner.registraPropriedade()
 
       const result = await CartorioWithSigner.getSenha();
-      console.log(result);
       if (result === senha) {
-        console.log(data);
         navigate('/home', { state: { data } });
+      } else {
+        setAlert(true);
       }
     } catch (error) {
       throw Error(error);
@@ -42,6 +44,14 @@ function Login() {
     <>
       <body>
         <div className="background">
+          {alert && (
+            <Stack sx={{ width: '100%', position:'absolute' }} spacing={2}>
+              <Alert severity="error">
+                <AlertTitle>Error</AlertTitle>
+                Verifiquei o usuario, senha e carteira — <strong>e tente novamente!</strong>
+              </Alert>
+            </Stack>
+          )}
           <div className="titulo-on-top">
             <h1 className="titulo">BUY & BUY</h1>
             <h2 className="subtitulo">INOVATE YOUR WAY TO BUY ACTIVE</h2>
@@ -72,7 +82,13 @@ function Login() {
               />
             </div>
             <div className="criar_conta">
-              <h4>criar conta</h4>
+              <h4
+                onClick={() => {
+                  navigate('/cadastrar');
+                }}
+              >
+                criar conta
+              </h4>
             </div>
             <div>
               <button
