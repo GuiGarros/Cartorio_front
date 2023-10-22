@@ -19,7 +19,6 @@ function HomePage() {
   const [contrato, setContrato] = useState(null);
   const navigate = useNavigate();
   const { state } = useLocation();
-  console.log(state);
   const [senha0, setSenha0] = useState('');
   const [senha, setSenha] = useState('');
   const [senha2, setSenha2] = useState('');
@@ -67,7 +66,6 @@ function HomePage() {
 
   async function handleclickMudaEmail() {
     if (await validaSenhaAtual(senhaMail)) {
-      console.log('aqui');
       setAlert(false);
       const jsonChangeEmail = {
         id_usuarios: id,
@@ -75,7 +73,6 @@ function HomePage() {
       };
       const { data } = await instance.put('/usuarios', jsonChangeEmail);
     } else {
-      console.log('aqui2');
       setAlert(true);
     }
   }
@@ -91,7 +88,6 @@ function HomePage() {
 
   function handleClickCancela(contrato) {
     if(parseInt(contrato.status) === 1) {
-      console.log("teste");
       navigate('/cancelavenda',{state:{contrato}});
     }
   }
